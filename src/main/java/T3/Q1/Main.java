@@ -15,6 +15,7 @@ public class Main {
                 System.out.println("B");
             }
         };
-        t.start();
+        //t.start();
+        t.run();
     }
 }

@@ -1,13 +1,12 @@
 package T3.Q15;
 
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Sample {
     public static void main(String[] args) {
         Value val = new AtomicValue();
 
-        ExecutorService exec = Executors.newFixedThreadPool(2);
+        final var exec = Executors.newFixedThreadPool(2);
         exec.submit(new Task(val));
         exec.submit(new Task(val));
 

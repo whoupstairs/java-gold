@@ -14,10 +14,10 @@ public class Task implements Runnable {
 
     @Override
     public void run() {
-        long id = Thread.currentThread().getId();
+        final var id = Thread.currentThread().getId();
         System.out.println("START:" + id);
 
-        int r = new Random().nextInt(10);
+        final var r = new Random().nextInt(10);
         try {
             Thread.sleep(r * 100);
         } catch (InterruptedException e) {

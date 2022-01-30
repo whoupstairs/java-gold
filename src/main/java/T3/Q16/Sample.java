@@ -1,7 +1,7 @@
 package T3.Q16;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -12,6 +12,8 @@ public class Sample {
         list.add(1);
         list.add(2);
         list.add(3);
+
+        final var test = new Vector<Integer>();
 
         ExecutorService exec = Executors.newFixedThreadPool(2);
         exec.submit(new WriteTask(list));

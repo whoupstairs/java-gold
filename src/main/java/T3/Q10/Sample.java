@@ -10,11 +10,11 @@ import java.util.concurrent.Future;
 
 public class Sample {
     public static void main(String[] args) throws Exception {
-        ExecutorService exec = Executors.newSingleThreadExecutor();
+        final var exec = Executors.newSingleThreadExecutor();
 
-        Callable<Boolean> task = new Callable<Boolean>() {
+        final var task = new Callable<Boolean>() {
             @Override
-            public Boolean call() throws Exception {
+            public Boolean call()  {
                 return new Random().nextInt() % 2 == 0;
             }
         };
