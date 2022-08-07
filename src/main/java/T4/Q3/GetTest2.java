@@ -1,14 +1,10 @@
-package T4.Q2;
+package T4.Q3;
 
 import java.util.Optional;
 
-public class GetTest {
+public class GetTest2 {
     public static void main(String[] args) {
         Optional<String> sample = Optional.empty();
-
-        if (sample.isPresent()) {
-            System.out.println(sample.get());
-        }
-
+        System.out.println(sample.orElseGet(() -> "else"));
     }
 }

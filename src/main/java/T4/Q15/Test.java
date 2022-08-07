@@ -11,7 +11,10 @@ public class Test {
                 new Value("C"),
                 new Value("A")
         );
-        long size = list.stream().distinct().count();
-        System.out.println(size);
+
+        //list.stream().distinct().forEach(System.out::println);
+
+        //long size = list.stream().distinct().count();
+        //System.out.println(size);
     }
 }

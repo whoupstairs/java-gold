@@ -1,4 +1,4 @@
-package T4.Q26;
+package T4.Q25;
 
 import T4.Q23.Item;
 import T4.Q23.ItemType;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class PartitioningBySample {
+public class SummingIntSample {
     public static void main(String[] args) {
         List<Item> list = Arrays.asList(
                 new Item(1, ItemType.BOOK, "Java", 1980),
@@ -17,10 +17,11 @@ public class PartitioningBySample {
                 new Item(4, ItemType.MAGAZINE, "Test", 1280)
         );
 
-        Map<Boolean, List<Item>> map = list.stream().collect(
-                Collectors.partitioningBy(
-                        item -> item.getPrice() > 1000));
+        Map<ItemType, Integer> group = list.stream().collect(
+                Collectors.groupingBy(
+                        Item::getType,
+                        Collectors.summingInt(Item::getPrice)));
 
-        System.out.println(map);
+        System.out.println(group);
     }
 }

@@ -10,5 +10,10 @@ public class MapSample {
                 .map(f -> f.toUpperCase())
                 .map(f -> f.length())
                 .forEach(System.out::println);
+
+        Arrays
+                .stream(fruits)
+                .map(f -> f.length())
+                .forEach(System.out::println);
     }
 }

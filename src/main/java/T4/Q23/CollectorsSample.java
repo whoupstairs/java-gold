@@ -17,9 +17,17 @@ public class CollectorsSample {
                 .filter(item -> item.getType() == ItemType.BOOK)
                 .collect(Collectors.toList());
 
+        books.forEach(System.out::println);
+
+        System.out.println("------------------------------");
+
         final var books2 = list.stream()
                 .filter(item -> item.getType() == ItemType.BOOK)
                 .collect(Collectors.toSet());
+
+        books2.forEach(System.out::println);
+        System.out.println("------------------------------");
+
 
         final var map = list.stream()
                 .collect(Collectors.toMap(
@@ -27,9 +35,13 @@ public class CollectorsSample {
                         item -> item
                 ));
 
+        //map.forEach((k, v) -> System.out.println(k + ":" + v));
+        //System.out.println("------------------------------");
+
+
         //books.forEach(System.out::println);
 
-        //map.keySet().stream().forEach(System.out::println);
-        map.values().stream().forEach(System.out::println);
+        map.keySet().stream().forEach(System.out::println);
+        //map.values().stream().forEach(System.out::println);
     }
 }
